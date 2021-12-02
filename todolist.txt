@@ -1,0 +1,16 @@
+seperate users from skills into their own db
+
+fix bug that doesn't go profile home when in edit mode and the Your Pofile link is clicked
+    - check React Router Link to see if there is anything to force a refresh
+    - maybe make a different page for current logged in user profile and other user profiles
+password changer
+create db fo logged on users to verify login status and admin status
+make page to edit skills list
+make modal to confirm deletion of profile
+have crew members and crew leader have the option to submit a time
+    - make a db for times
+
+make a 404
+make user usecontext and reducer
+
+make video player
