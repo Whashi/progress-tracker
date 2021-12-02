@@ -1,0 +1,14 @@
+.my-button {
+  background-color: palegreen;
+  color: green;
+  border: darkgreen;
+  font-weight: 800;
+  border-radius: 2rem;
+}
+
+.my-button:hover,
+.my-button:active {
+  background-color: darkgreen;
+  cursor: pointer;
+  color: black;
+}

@@ -1,0 +1,43 @@
+.login-title {
+  margin: 3rem 20%;
+}
+
+.login-header {
+  margin-left: 20%;
+}
+
+.login-card {
+  width: 50%;
+  margin: 5rem 20%;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.login-item {
+  padding: 0.3rem;
+  margin: 0.5rem;
+}
+
+.login-item-form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.login-button {
+  height: 2rem;
+  margin: 2rem 35%;
+  width: 20%;
+}
+
+.error {
+  color: red;
+}
+
+label {
+  font-weight: 700;
+}

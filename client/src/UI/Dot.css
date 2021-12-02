@@ -1,0 +1,11 @@
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.green {
+  background-color: limegreen;
+}
+.black {
+  background-color: black;
+}

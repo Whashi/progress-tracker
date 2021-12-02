@@ -1,0 +1,28 @@
+.active {
+  background-color: darkgreen;
+  color: black;
+}
+
+.skillLevelContainer {
+  display: flex;
+  margin: 2rem auto;
+}
+
+.skillLevels {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+  height: 3rem;
+  width: 60%;
+}
+
+.skill-level-button {
+  margin: 0.5rem;
+}
+
+.my-button:hover,
+.my-button:active {
+  background-color: darkgreen;
+  cursor: default;
+  color: black;
+}

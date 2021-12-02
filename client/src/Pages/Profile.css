@@ -1,0 +1,81 @@
+.profile {
+  padding-left: 5%;
+  margin-top: 7rem;
+}
+
+.profile-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: right;
+  margin: 2rem 7rem;
+}
+
+.delete-button {
+  height: 2rem;
+  width: 5rem;
+  margin-right: 1rem;
+  background-color: red;
+  color: black;
+}
+
+.delete-button:hover,
+.delete-button:active {
+background-color: darkred;
+cursor: pointer;
+}
+
+.save-button {
+  height: 2rem;
+  width: 5rem;
+  margin-right: 1rem;
+  background-color: blue;
+  color: black;
+}
+
+.save-button:hover,
+.save-button:active {
+background-color: darkblue;
+cursor: pointer;
+}
+
+.toggle-button {
+  height: 2rem;
+  width: 5rem;
+  background-color: yellow;
+  color: black;
+}
+
+.toggle-button:hover,
+.toggle-button:active {
+background-color: yellow;
+cursor: pointer;
+}
+
+.skills {
+  display: flex;
+  list-style: none;
+  padding-left: 0%;
+  width: 95%;
+}
+.skills-list-item {
+  width: 80%;
+}
+.skills-title {
+  padding: 1rem;
+}
+.skills-list {
+  list-style: none;
+  padding: 0%;
+  flex-direction: column;
+  width: 100%;
+}

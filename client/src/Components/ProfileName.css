@@ -1,0 +1,12 @@
+.profile-name-edit {
+  display: flex;
+}
+.name-edit-input {
+  background-color: whitesmoke;
+  font-size: larger;
+  border: none;
+  text-align: center;
+  border-radius: 1rem;
+  height: 3rem;
+  margin: 1rem 0 0 1rem;
+}

@@ -1,0 +1,26 @@
+.create-new-profile-card {
+  width: 50%;
+  margin: 10rem 20%;
+}
+
+.new-profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.new-profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+.new-profile-item {
+  padding: 0.3rem;
+  margin: 0.5rem;
+}
+
+.new-profile-button{
+    height: 2rem;
+    margin: 2rem 35%;
+    width: 30%;
+}

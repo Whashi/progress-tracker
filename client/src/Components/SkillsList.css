@@ -1,0 +1,12 @@
+.skills-list-item {
+    width: 80%;
+  }
+  .skills-title {
+    padding: 1rem;
+  }
+  .skills-list {
+    list-style: none;
+    padding: 0%;
+    flex-direction: column;
+    width: 100%;
+  }

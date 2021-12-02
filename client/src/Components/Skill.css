@@ -1,0 +1,32 @@
+.skill {
+  width: 85%;
+  margin: 5%;
+}
+.skill-title {
+  font-size: 1rem;
+  margin: 0.1rem;
+}
+
+.progress-dots-container {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.amount-button {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.edit-dot:hover,
+.edit-dot:active {
+  cursor: pointer;
+  color: black;
+}
+
