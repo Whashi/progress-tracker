@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../UI/Button";
 
-import "./ProfileSkillLevel.css"
+import "./ProfileSkillLevel.css";
 
 const ProfileSkillLevel = (props) => {
   const [entrytValue, setEntryValue] = useState(props.profile.level);
@@ -10,7 +10,7 @@ const ProfileSkillLevel = (props) => {
     props.updateProfile({ ...props.editedProfile, level: e.target.value });
   };
 
-  const editSkillLevel = props.skillTitles.map((skillTitle) => {
+  const editSkillLevel = props.skillTitles.map((skillTitle, index) => {
     const buttonActive = skillTitle === entrytValue;
     let buttonClass = "skill-level-button";
     if (buttonActive) {
@@ -18,6 +18,7 @@ const ProfileSkillLevel = (props) => {
     }
     return (
       <Button
+        key={index}
         className={buttonClass}
         value={skillTitle}
         onClick={valueChangeHandler}
@@ -32,9 +33,7 @@ const ProfileSkillLevel = (props) => {
       {props.canEdit ? (
         <div className="skillLevelContainer">
           <h2>Skill Level: </h2>
-          <div className="skillLevels">
-          {editSkillLevel}
-          </div>
+          <div className="skillLevels">{editSkillLevel}</div>
         </div>
       ) : (
         <h2>{props.profile.level}</h2>

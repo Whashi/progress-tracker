@@ -6,7 +6,7 @@ const ProfileName = (props) => {
   const [entrytValue, setEntryValue] = useState(props.profile.name);
   const valueChangeHandler = (e) => {
     setEntryValue(e.target.value);
-    props.updateProfile({ ...props.editpedProfile, name: e.target.value });
+    props.updateProfile({ ...props.editedProfile, name: e.target.value });
   };
 
   return (

@@ -35,7 +35,6 @@ const Profile = (props) => {
         history.replace("/login");
       }
       setProfile(response.data.data);
-      setEditedProfile(response.data.data)
     };
 
     const getProfileAuthLevel = async (id) => {
@@ -80,7 +79,7 @@ const Profile = (props) => {
   const deleteProfile = async (e) => {
     e.preventDefault();
     await axios.delete(`http://localhost:5000/profile/${profileId}`);
-    history.replace("/profile-list")
+    history.replace("/profile-list");
   };
 
   const saveProfile = async (updatedProfile) => {
@@ -97,8 +96,8 @@ const Profile = (props) => {
   };
 
   const updateProfile = (newData) => {
-    setEditedProfile(newData)
-  }
+    setEditedProfile(newData);
+  };
 
   let buttons;
 
@@ -146,30 +145,21 @@ const Profile = (props) => {
   ];
 
   const profileSkills = [
-    profile.skillsAprenticeLevel1,
-    profile.skillsAprenticeLevel2,
-    profile.skillsJourneymanLevel1,
-    profile.skillsJourneymanLevel2,
-  ];
-
-  const editedProfileSkills = [
-    editedProfile.skillsAprenticeLevel1,
-    editedProfile.skillsAprenticeLevel2,
-    editedProfile.skillsJourneymanLevel1,
-    editedProfile.skillsJourneymanLevel2,
+    [...profile.skillsAprenticeLevel1],
+    [...profile.skillsAprenticeLevel2],
+    [...profile.skillsJourneymanLevel1],
+    [...profile.skillsJourneymanLevel2],
   ];
 
   const skills = profileSkills.map((profileSkill, index) => {
-    // console.log(editedProfileSkills[index]);
     return (
       <SkillsList
         key={index}
         skillKey={skillKeyes[index]}
         title={skillTitles[index]}
-        profile={profile}
         editedProfile={editedProfile}
+        profile={profile}
         profileSkill={profileSkill}
-        editedProfileSkill={editedProfileSkills[index]}
         updateProfile={updateProfile}
         canEdit={editToggle}
       />

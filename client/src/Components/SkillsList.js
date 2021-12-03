@@ -4,16 +4,17 @@ import Skill from "./Skill";
 import "./SkillsList.css";
 
 const SkillsList = (props) => {
+  console.log(props.profileSkill, props.editedProfileSkill);
+  let skillsClone = [...props.profileSkill]; // everytime component is rendered it copies the old data from profileskill
   const updateSkills = (index, newSkill) => {
-    const skillsClone = [...props.profileSkill];
-    console.log(props.editedProfileSkill);
     skillsClone.splice(index, 1, newSkill);
     const updatedProfile = {
-      ...props.profileSkill,
+      ...props.editedProfile,
       [props.skillKey]: skillsClone,
     };
     props.updateProfile(updatedProfile);
   };
+
   const skillsList = props.profileSkill.map((skill, index) => {
     return (
       <Skill
