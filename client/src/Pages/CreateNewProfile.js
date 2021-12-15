@@ -23,7 +23,7 @@ const CreateNewProfile = (props) => {
 
   const addProfile = async (profile) => {
     await axios
-      .post("http://localhost:5000/profile/", profile, {
+      .post("/profile/", profile, {
         headers: {
           "Content-Type": "application/json",
         },

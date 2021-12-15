@@ -27,7 +27,7 @@ const Profile = (props) => {
   useEffect(() => {
     const getProfile = async (id) => {
       const response = await axios
-        .get(`http://localhost:5000/profile/${id}`, {
+        .get(`/profile/${id}`, {
           headers: { "x-auth-token": localStorage.getItem("x-auth-token") },
         })
         .catch((err) => console.log(err.response.data.msg));
@@ -39,7 +39,7 @@ const Profile = (props) => {
 
     const getProfileAuthLevel = async (id) => {
       const response = await axios
-        .get(`http://localhost:5000/profile/${id}`, {
+        .get(`/profile/${id}`, {
           headers: { "x-auth-token": localStorage.getItem("x-auth-token") },
         })
         .catch((err) => console.log(err.response.data.msg));
@@ -78,13 +78,13 @@ const Profile = (props) => {
 
   const deleteProfile = async (e) => {
     e.preventDefault();
-    await axios.delete(`http://localhost:5000/profile/${profileId}`);
+    await axios.delete(`/profile/${profileId}`);
     history.replace("/profile-list");
   };
 
   const saveProfile = async (updatedProfile) => {
     await axios.patch(
-      `http://localhost:5000/profile/${profileId}`,
+      `/profile/${profileId}`,
       updatedProfile
     );
     setIsUpdating(true);

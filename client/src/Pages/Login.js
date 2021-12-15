@@ -35,7 +35,7 @@ const Login = (props) => {
   const getProfileId = async (name, password) => {
     const response = await axios
       .post(
-        "http://localhost:5000/profile/login/",
+        "/profile/login/",
         {
           name,
           password,

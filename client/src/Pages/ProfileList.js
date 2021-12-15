@@ -12,7 +12,7 @@ const ProfileList = (props) => {
 
   useEffect(() => {
     const getProfiles = async () => {
-      const response = await axios.get("http://localhost:5000/profile/", {
+      const response = await axios.get("/profile/", {
         headers: { "x-auth-token": localStorage.getItem("x-auth-token") },
       });
       if (!response) {
