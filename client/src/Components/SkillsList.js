@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Skill from "./Skill";
 
 import "./SkillsList.css";
 
 const SkillsList = (props) => {
-  console.log(props.profileSkill, props.editedProfileSkill);
-  let skillsClone = [...props.profileSkill]; // everytime component is rendered it copies the old data from profileskill
+  const [skillsClone, setskillsClone] = useState();
+  const [showSkillList, setShowSkillList] = useState(false)
+  useEffect(() => {
+    if (props.editedProfile[props.skillKey]) {
+      setskillsClone(props.editedProfile[props.skillKey]);
+    } else {
+      setskillsClone(props.profile[props.skillKey]);
+    }
+  }, [skillsClone, props.editedProfile, props.profile, props.skillKey]);
   const updateSkills = (index, newSkill) => {
-    skillsClone.splice(index, 1, newSkill);
+    setskillsClone(skillsClone.splice(index, 1, newSkill));
     const updatedProfile = {
       ...props.editedProfile,
       [props.skillKey]: skillsClone,
     };
     props.updateProfile(updatedProfile);
   };
+
+  const skillListClass = showSkillList ? "skills-list" : "skills-list no-show"
+
+  const showSkillListToggle = () => {
+    setShowSkillList(!showSkillList)
+  }
 
   const skillsList = props.profileSkill.map((skill, index) => {
     return (
@@ -28,8 +41,8 @@ const SkillsList = (props) => {
   });
   return (
     <li className="skills-list-item">
-      <h3 className="skills-title">{props.title}</h3>
-      <ul className="skills-list">{skillsList}</ul>
+      <h3 className="skills-title" onClick={showSkillListToggle}>{props.title}</h3>
+      <ul className={skillListClass}>{skillsList}</ul>
     </li>
   );
 };

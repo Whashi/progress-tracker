@@ -8,6 +8,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.profile-top-container-edit-mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .profile-info-container {
   display: flex;
@@ -30,8 +35,8 @@
 
 .delete-button:hover,
 .delete-button:active {
-background-color: darkred;
-cursor: pointer;
+  background-color: darkred;
+  cursor: pointer;
 }
 
 .save-button {
@@ -44,8 +49,8 @@ cursor: pointer;
 
 .save-button:hover,
 .save-button:active {
-background-color: darkblue;
-cursor: pointer;
+  background-color: darkblue;
+  cursor: pointer;
 }
 
 .toggle-button {
@@ -57,12 +62,13 @@ cursor: pointer;
 
 .toggle-button:hover,
 .toggle-button:active {
-background-color: yellow;
-cursor: pointer;
+  background-color: yellow;
+  cursor: pointer;
 }
 
 .skills {
   display: flex;
+  flex-direction: column;
   list-style: none;
   padding-left: 0%;
   width: 95%;
@@ -78,4 +84,19 @@ cursor: pointer;
   padding: 0%;
   flex-direction: column;
   width: 100%;
+}
+@media (min-width: 768px) {
+  .skills {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-left: 0%;
+    width: 95%;
+  }
+  .profile-top-container {
+    flex-direction: row;
+  }
+  .profile-top-container-edit-mode {
+    flex-direction: row;
+  }
 }

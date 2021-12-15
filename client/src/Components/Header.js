@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Button from "../UI/Button";
+import Navigation from "./Navigation";
+import MenuIcon from "@mui/icons-material/Menu";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 import "./Header.css";
+import Button from "../UI/Button";
 
 const Header = (props) => {
   const history = useHistory();
@@ -12,6 +14,7 @@ const Header = (props) => {
   const [httpError, setHttpError] = useState();
   const authorized = profileAuthLevel === 2;
   const profileRoute = "/profile/" + localStorage.getItem("user-id");
+  const [hamburgerToggle, setHamburgerToggle] = useState(false);
 
   useEffect(() => {
     const getProfileAuthLevel = async (id) => {
@@ -37,41 +40,33 @@ const Header = (props) => {
   };
 
   if (httpError) {
-    return <h3>{httpError}</h3>
+    return <h3>{httpError}</h3>;
   }
 
+  const hamburgerClickHandler = () => {
+    setHamburgerToggle(!hamburgerToggle);
+  };
+
   return (
-    <header className="header-container">
-      <div className="title-container">
-        <h3 className="header-title">Progress Tracker</h3>
-      </div>
-      <nav className="nav-container">
-        <ul className="nav-list">
-          <li className="nav-item">
-            <Link className="link" to={profileRoute}>
-              Your Profile
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="link" to="/profile-list">
-              Profile List
-            </Link>
-          </li>
-          {authorized && (
-            <li className="nav-item">
-              <Link className="link" to="/new-profile">
-                Create New Profile
-              </Link>
-            </li>
-          )}
-          <li>
-            <Button className="logout-button nav-item" onClick={logOut}>
-              Logout
-            </Button>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <React.Fragment>
+      <header className="header-container">
+        <div className="title-container">
+          <h3 className="header-title">Progress Tracker</h3>
+        </div>
+        <nav className="hamburger-toggle-container">
+          <div className="hamburger-toggle" onClick={hamburgerClickHandler}>
+            {hamburgerToggle ? <CancelIcon /> : <MenuIcon />}
+          </div>
+        </nav>
+      </header>
+      {hamburgerToggle && (
+        <Navigation
+          profileRoute={profileRoute}
+          authorized={authorized}
+          logOut={logOut}
+        />
+      )}
+    </React.Fragment>
   );
 };
 

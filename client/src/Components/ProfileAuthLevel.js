@@ -18,7 +18,7 @@ const ProfileAuthLevel = (props) => {
   const authLevels = authLevelValues.map((authLevelValue, index) => {
     const buttonActive =
       index.toString() === entrytValue || index === entrytValue;
-    let buttonClass = "skill-level-button";
+    let buttonClass = "auth-level-button";
     if (buttonActive) {
       buttonClass = `active ${buttonClass}`;
     }
@@ -35,9 +35,9 @@ const ProfileAuthLevel = (props) => {
   });
 
   return (
-    <div>
+    <div className="auth-level-container">
       <h2>Authorization Level: </h2>
-      {authLevels}
+      <div className="auth-levels">{authLevels}</div>
     </div>
   );
 };

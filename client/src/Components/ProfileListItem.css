@@ -6,7 +6,7 @@
 }
 
 .profile-list-item {
-  width: 70rem;
+  width: 90%;
   margin: auto 2rem;
   display: flex;
   justify-content: space-between;
@@ -24,6 +24,10 @@
   flex-direction: row;
   margin-left: 2rem;
   width: 60%;
+}
+
+.profile-list-card {
+  width: 95%;
 }
 
 .profile-list-card:hover {

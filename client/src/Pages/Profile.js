@@ -99,12 +99,14 @@ const Profile = (props) => {
     setEditedProfile(newData);
   };
 
+  const profilTopContainerClass = editToggle ? "profile-top-container-edit-mode" : "profile-top-container"
+
   let buttons;
 
   if (authorized) {
     if (editToggle) {
       buttons = (
-        <div className="buttons-container ">
+        <div className="buttons-container editmode">
           <Button className="delete-button" onClick={deleteProfile}>
             Delete
           </Button>
@@ -169,7 +171,7 @@ const Profile = (props) => {
   return (
     <div className="profile">
       <Header id={profile._id} auth={props.authLevel} />
-      <div className="profile-top-container">
+      <div className={profilTopContainerClass}>
         <div className="profile-info-container">
           <ProfileName
             canEdit={editToggle}

@@ -1,12 +1,33 @@
 .skills-list-item {
+  width: 100%;
+}
+.skills-title {
+  padding: 0.5rem;
+  border: 0.1rem solid;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+.skills-list {
+  list-style: none;
+  padding: 0%;
+  flex-direction: column;
+  width: 100%;
+}
+
+.no-show {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .skills-list-item {
     width: 80%;
   }
   .skills-title {
     padding: 1rem;
+    border: none;
   }
-  .skills-list {
-    list-style: none;
-    padding: 0%;
-    flex-direction: column;
-    width: 100%;
+  .no-show{
+    display: inherit;
   }
+}
