@@ -19,7 +19,7 @@ const Header = (props) => {
   useEffect(() => {
     const getProfileAuthLevel = async (id) => {
       const response = await axios
-        .get(`http://localhost:5000/profile/${id}`, {
+        .get(`/profile/${id}`, {
           headers: { "x-auth-token": localStorage.getItem("x-auth-token") },
         })
         .catch((err) => console.log(err.response.data.msg));
