@@ -23,10 +23,7 @@
   font-weight: 700;
 }
 .hamburger-toggle-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
+  margin-left: 65%;
 }
 
 .hamburger-toggle {
@@ -43,5 +40,8 @@
     margin-left: 5rem;
     font-size: x-large;
     font-weight: 700;
+  }
+  .hamburger-toggle-container {
+    margin-left: 75%;
   }
 }
