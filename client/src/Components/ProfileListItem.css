@@ -20,10 +20,7 @@
 }
 
 .skill-summaries {
-  display: flex;
-  flex-direction: row;
-  margin-left: 2rem;
-  width: 60%;
+  display: none;
 }
 
 .profile-list-card {
@@ -32,4 +29,14 @@
 
 .profile-list-card:hover {
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .skill-summaries {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+    width: 60%;
+  }
+
 }
